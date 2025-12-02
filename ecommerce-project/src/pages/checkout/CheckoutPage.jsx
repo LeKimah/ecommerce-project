@@ -1,25 +1,25 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { OrderSummary } from "./OrderSummary.jsx";
-import { PaymentSummary } from "./PaymentSummary.jsx";
-import "./CheckoutPage.css";
-import "./checkout-header.css";
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+import { OrderSummary } from './OrderSummary';
+import { PaymentSummary } from './PaymentSummary';
+import './checkout-header.css';
+import './CheckoutPage.css';
 
-export default function CheckoutPage({ cart }) {
+export function CheckoutPage({ cart }) {
   const [deliveryOptions, setDeliveryOptions] = useState([]);
   const [paymentSummary, setPaymentSummary] = useState(null);
 
   useEffect(() => {
     const fetchCheckoutData = async () => {
       let response = await axios.get(
-        "api/delivery-options?expand=estimatedDeliveryTime"
+        '/api/delivery-options?expand=estimatedDeliveryTime'
       );
-
       setDeliveryOptions(response.data);
 
-      response = await axios.get("/api/payment-summary");
+      response = await axios.get('/api/payment-summary');
       setPaymentSummary(response.data);
     };
+
     fetchCheckoutData();
   }, []);
 
@@ -37,11 +37,8 @@ export default function CheckoutPage({ cart }) {
           </div>
 
           <div className="checkout-header-middle-section">
-            Checkout (
-            <a className="return-to-home-link" href="/">
-              3 items
-            </a>
-            )
+            Checkout (<a className="return-to-home-link"
+              href="/">3 items</a>)
           </div>
 
           <div className="checkout-header-right-section">
