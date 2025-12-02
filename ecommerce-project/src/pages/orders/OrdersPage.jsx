@@ -1,8 +1,8 @@
 import axios from "axios";
 import dayjs from "dayjs";
 import { useState, useEffect, Fragment } from "react";
-import Header from "../components/header.jsx";
-import { formatMoney } from "../utils/money.js";
+import Header from "../../components/header.jsx";
+import { formatMoney } from "../../utils/money.js";
 import "./OrdersPage.css";
 
 export default function CheckoutPage({ cart }) {
