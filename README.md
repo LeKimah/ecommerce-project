@@ -42,15 +42,6 @@ Backend
 
 ---
 
-📁 Estructura del proyecto
-
-/ecommerce-project
-│
-├── ecommerce-project     # Frontend (React)
-└── ecommerce-backend     # Backend (Node.js + Express)
-
----
-
 ⚙️ Instalación y ejecución local
 
 Requisitos
